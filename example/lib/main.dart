@@ -8,12 +8,25 @@ import 'dart:ui' as ui;
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Save image to gallery',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _MyAppState extends State<MyHomePage> {
   GlobalKey _globalKey = GlobalKey();
 
   @override
@@ -48,7 +61,7 @@ class _MyAppState extends State<MyApp> {
 
   _saved() async {
     RenderRepaintBoundary boundary =
-    _globalKey.currentContext.findRenderObject();
+        _globalKey.currentContext.findRenderObject();
     ui.Image image = await boundary.toImage();
     ByteData byteData = await image.toByteData(format: ui.ImageByteFormat.png);
     final result = await FlutterOtherPlugin.save(byteData.buffer.asUint8List());
