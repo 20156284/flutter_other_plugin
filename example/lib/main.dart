@@ -1,76 +1,8 @@
-//import 'package:flutter/material.dart';
-//import 'package:flutter/rendering.dart';
-//import 'dart:async';
-//
-//import 'package:flutter/services.dart';
-//import 'package:flutter_other_plugin/flutter_other_plugin.dart';
-//import 'dart:ui' as ui;
-//
-//void main() => runApp(MyApp());
-//
-//class MyApp extends StatelessWidget {
-//  @override
-//  Widget build(BuildContext context) {
-//    return MaterialApp(
-//      title: 'Save image to gallery',
-//      theme: ThemeData(
-//        primarySwatch: Colors.blue,
-//      ),
-//      home: MyHomePage(),
-//    );
-//  }
-//}
-//
-//class MyHomePage extends StatefulWidget {
-//  @override
-//  _MyAppState createState() => _MyAppState();
-//}
-//
-//class _MyAppState extends State<MyHomePage> {
-//  GlobalKey _globalKey = GlobalKey();
-//
-//  @override
-//  Widget build(BuildContext context) {
-//    return Scaffold(
-//        appBar: AppBar(
-//          title: Text("Save image to gallery"),
-//        ),
-//        body: Center(
-//          child: Column(
-//            children: <Widget>[
-//              RepaintBoundary(
-//                key: _globalKey,
-//                child: Container(
-//                  width: 200,
-//                  height: 200,
-//                  color: Colors.red,
-//                ),
-//              ),
-//              Container(
-//                child: RaisedButton(
-//                  onPressed: _saved,
-//                  child: Text("保存到相册"),
-//                ),
-//                width: 100,
-//                height: 50,
-//              )
-//            ],
-//          ),
-//        ));
-//  }
-//
-//  _saved() async {
-//    RenderRepaintBoundary boundary =
-//        _globalKey.currentContext.findRenderObject();
-//    ui.Image image = await boundary.toImage();
-//    ByteData byteData = await image.toByteData(format: ui.ImageByteFormat.png);
-//    final result = await FlutterOtherPlugin.save(byteData.buffer.asUint8List());
-//    print(result);
-//  }
-//}
-
 import 'dart:async';
+import 'dart:ui' as ui;
+
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_other_plugin/flutter_other_plugin.dart';
 
@@ -96,6 +28,8 @@ class _MyAppState extends State<MyApp> {
   bool currentWidget = true;
 
   Image image1;
+
+  GlobalKey _globalKey;
 
   @override
   void initState() {
@@ -142,18 +76,19 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+  _saved() async {
+    RenderRepaintBoundary boundary =
+        _globalKey.currentContext.findRenderObject();
+    ui.Image image = await boundary.toImage();
+    ByteData byteData = await image.toByteData(format: ui.ImageByteFormat.png);
+    final result = await FlutterOtherPlugin.save(byteData.buffer.asUint8List());
+    print(result);
+  }
+
   @override
   Widget build(BuildContext context) {
-    List<Widget> widgets;
-
-    if (_currentLocation == null) {
-      widgets = new List();
-    } else {
-      widgets = [
-        new Image.network(
-            "https://maps.googleapis.com/maps/api/staticmap?center=${_currentLocation.latitude},${_currentLocation.longitude}&zoom=18&size=640x400&key=YOUR_API_KEY")
-      ];
-    }
+    List<Widget> widgets = new List();
+    _globalKey = GlobalKey();
 
     widgets.add(new Center(
         child: new Text(_startLocation != null
@@ -169,13 +104,31 @@ class _MyAppState extends State<MyApp> {
         child: new Text(
             _permission ? 'Has permission : Yes' : "Has permission : No")));
 
+    widgets.add(new RepaintBoundary(
+      key: _globalKey,
+      child: Container(
+        width: 200,
+        height: 200,
+        color: Colors.red,
+      ),
+    ));
+
+    widgets.add(new Container(
+      child: RaisedButton(
+        onPressed: _saved,
+        child: Text("保存到相册"),
+      ),
+      width: 100,
+      height: 50,
+    ));
+
     return new MaterialApp(
         home: new Scaffold(
             appBar: new AppBar(
               title: new Text('Location plugin example app'),
             ),
             body: new Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
               children: widgets,
             )));
