@@ -1,7 +1,7 @@
 name: flutter_other_plugin
 description: This is a plugin for saving images and getting locations
 version: 0.0.3
-author: quicey <willzh@live.cn>
+author: Will <willzh@live.cn>
 homepage: https://github.com/20156284/flutter_other_plugin
 
 dependencies:

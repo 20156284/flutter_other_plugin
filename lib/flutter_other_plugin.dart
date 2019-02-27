@@ -45,9 +45,7 @@ const EventChannel _stream =
 class FlutterOtherPlugin {
   Stream<LocationData> _onLocationChanged;
 
-  /// Gets the current location of the user.
-  ///
-  /// Throws an error if the app has no permission to access location.
+  //获取地理定位
   Future<LocationData> getLocation() => _channel
       .invokeMethod('getLocation')
       .then((result) => LocationData.fromMap(result.cast<String, double>()));
@@ -56,8 +54,7 @@ class FlutterOtherPlugin {
   Future<bool> hasPermission() =>
       _channel.invokeMethod('hasPermission').then((result) => result == 1);
 
-  /// save image to Gallery
-  /// imageBytes can't null
+  //保存图片
   static Future save(Uint8List imageBytes) async {
     assert(imageBytes != null);
     final result =

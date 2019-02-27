@@ -3,10 +3,23 @@
   <component name="ChangeListManager">
     <list default="true" id="d3bb65fa-988b-4429-bb26-bc0e52a5fbdf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/src/main/java/com/willcheung/flutterotherplugin/FlutterOtherPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/willcheung/flutterotherplugin/FlutterOtherPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_other_plugin/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_other_plugin/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_other_plugin/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_other_plugin/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_other_plugin/android/src/main/java/com/willcheung/flutterotherplugin/FlutterOtherPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_other_plugin/android/src/main/java/com/willcheung/flutterotherplugin/FlutterOtherPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_other_plugin/example/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_other_plugin/example/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_other_plugin/example/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_other_plugin/example/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_other_plugin/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_other_plugin/example/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_other_plugin/flutter_other_plugin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_other_plugin/flutter_other_plugin.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_other_plugin/lib/flutter_other_plugin.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_other_plugin/lib/flutter_other_plugin.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_other_plugin/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_other_plugin/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flutter_other_plugin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_other_plugin.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/flutter_other_plugin.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/flutter_other_plugin.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
@@ -25,62 +38,66 @@
     <session id="-2127887590">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="17" />
-          <entry key="project.open.time.0" value="2" />
-          <entry key="project.open.time.1" value="6" />
+          <entry key="project.closed" value="23" />
+          <entry key="project.open.time.0" value="3" />
+          <entry key="project.open.time.1" value="7" />
+          <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.15" value="1" />
-          <entry key="project.open.time.2" value="5" />
+          <entry key="project.open.time.2" value="6" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="19" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.9" value="2" />
+          <entry key="project.opened" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dart" value="12" />
+          <entry key="dart" value="70" />
           <entry key="java" value="2" />
           <entry key="m" value="9" />
           <entry key="md" value="68" />
           <entry key="txt" value="33" />
-          <entry key="yaml" value="65" />
+          <entry key="yaml" value="69" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Dart" value="12" />
+          <entry key="Dart" value="70" />
           <entry key="JAVA" value="2" />
           <entry key="Markdown" value="68" />
           <entry key="ObjectiveC" value="9" />
           <entry key="PLAIN_TEXT" value="33" />
-          <entry key="YAML" value="65" />
+          <entry key="YAML" value="69" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="dart" value="10" />
+          <entry key="dart" value="16" />
+          <entry key="gitignore" value="1" />
           <entry key="gradle" value="1" />
-          <entry key="h" value="1" />
+          <entry key="h" value="2" />
           <entry key="iml" value="1" />
-          <entry key="java" value="6" />
+          <entry key="java" value="7" />
           <entry key="m" value="1" />
           <entry key="md" value="2" />
-          <entry key="xml" value="2" />
-          <entry key="yaml" value="7" />
+          <entry key="xml" value="3" />
+          <entry key="yaml" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Dart" value="10" />
+          <entry key="Dart" value="16" />
           <entry key="Groovy" value="1" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="6" />
+          <entry key="JAVA" value="7" />
           <entry key="Markdown" value="2" />
-          <entry key="ObjectiveC" value="2" />
-          <entry key="XML" value="2" />
-          <entry key="YAML" value="7" />
+          <entry key="ObjectiveC" value="3" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="XML" value="3" />
+          <entry key="YAML" value="8" />
         </counts>
       </usages-collector>
     </session>
@@ -90,8 +107,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/flutter_other_plugin.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="59" />
+            <state relative-caret-position="200">
+              <caret line="44" column="24" selection-start-line="44" selection-start-column="6" selection-end-line="44" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -99,10 +116,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/android/src/main/java/com/willcheung/flutterotherplugin/FlutterOtherPlugin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2295">
-              <caret line="157" column="62" selection-start-line="157" selection-start-column="62" selection-end-line="157" selection-end-column="62" />
+            <state relative-caret-position="-2519">
+              <caret line="69" column="33" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#5103#5104#0" expanded="true" />
+                <element signature="e#5153#5154#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -113,6 +132,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>checkPermissions</find>
+      <find>METHOD_CHANNEL_NAME</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -125,18 +145,18 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/ios/Classes/FlutterOtherPlugin.m" />
-        <option value="$PROJECT_DIR$/example/lib/main.dart" />
-        <option value="$PROJECT_DIR$/lib/flutter_other_plugin.dart" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/example/test/widget_test.dart" />
         <option value="$PROJECT_DIR$/pubspec.yaml" />
+        <option value="$PROJECT_DIR$/example/test/widget_test.dart" />
+        <option value="$PROJECT_DIR$/lib/flutter_other_plugin.dart" />
+        <option value="$PROJECT_DIR$/example/lib/main.dart" />
         <option value="$PROJECT_DIR$/android/src/main/java/com/willcheung/flutterotherplugin/FlutterOtherPlugin.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="184" />
-    <option name="y" value="74" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="227" />
+    <option name="y" value="69" />
     <option name="width" value="1431" />
     <option name="height" value="845" />
   </component>
@@ -146,7 +166,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -175,6 +194,28 @@
             <path>
               <item name="flutter_other_plugin" type="b2602c69:ProjectViewProjectNode" />
               <item name="flutter_other_plugin" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flutter_other_plugin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flutter_other_plugin" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flutter_other_plugin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flutter_other_plugin" type="462c0819:PsiDirectoryNode" />
+              <item name="ios" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flutter_other_plugin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flutter_other_plugin" type="462c0819:PsiDirectoryNode" />
+              <item name="ios" type="462c0819:PsiDirectoryNode" />
+              <item name="Classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flutter_other_plugin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flutter_other_plugin" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -182,11 +223,13 @@
         </subPane>
         <option name="show-excluded-files" value="false" />
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="dart.analysis.tool.window.force.activate" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="http.proxy" />
     <property name="show.migrate.to.gradle.popup" value="false" />
@@ -269,12 +312,12 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="184" y="74" width="1431" height="845" extended-state="0" />
+    <frame x="227" y="69" width="1431" height="845" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28653708" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4950495" visible="true" weight="0.31173506" />
       <window_info id="Captures" order="1" side_tool="true" />
-      <window_info id="Structure" order="2" side_tool="true" />
+      <window_info id="Structure" order="2" sideWeight="0.5049505" side_tool="true" weight="0.2987761" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
       <window_info id="Build Variants" order="5" side_tool="true" />
@@ -290,7 +333,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50035995" side_tool="true" weight="0.32934928" />
       <window_info anchor="bottom" id="Flutter Performance" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32983682" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32934928" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Theme Preview" order="2" />
@@ -314,13 +357,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ios/Classes/FlutterOtherPlugin.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
@@ -351,20 +387,6 @@
     <entry file="file://$PROJECT_DIR$/example/android/app/app.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="66" column="43" selection-start-line="66" selection-start-column="25" selection-end-line="66" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/test/widget_test.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/test_api-0.2.1/lib/src/frontend/expect.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -372,26 +394,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/flutter_other_plugin.dart">
+    <entry file="file://$PROJECT_DIR$/example/test/widget_test.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="59" />
+        <state relative-caret-position="30">
+          <caret line="2" column="47" lean-forward="true" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pubspec.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        <state relative-caret-position="195">
+          <caret line="13" column="16" lean-forward="true" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ios/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ios/Classes/FlutterOtherPlugin.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/flutter/packages/flutter/lib/src/services/platform_channel.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="290" column="6" selection-start-line="290" selection-start-column="6" selection-end-line="290" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-157">
+          <caret line="98" selection-start-line="98" selection-end-line="98" />
+          <folding>
+            <element signature="e#1939#1959#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/flutter_other_plugin.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="44" column="24" selection-start-line="44" selection-start-column="6" selection-end-line="44" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/android/src/main/java/com/willcheung/flutterotherplugin/FlutterOtherPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2295">
-          <caret line="157" column="62" selection-start-line="157" selection-start-column="62" selection-end-line="157" selection-end-column="62" />
+        <state relative-caret-position="-2519">
+          <caret line="69" column="33" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#5103#5104#0" expanded="true" />
+            <element signature="e#5153#5154#0" expanded="true" />
           </folding>
         </state>
       </provider>
