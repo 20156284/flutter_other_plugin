@@ -21,8 +21,9 @@ class _MyAppState extends State<MyApp> {
 
   StreamSubscription<LocationData> _locationSubscription;
 
-  FlutterOtherPlugin _location = new FlutterOtherPlugin();
+  FlutterOtherPlugin _flutterOtherPlugin = new FlutterOtherPlugin();
   bool _permission = false;
+  bool _save = false;
   String error;
 
   bool currentWidget = true;
@@ -38,7 +39,7 @@ class _MyAppState extends State<MyApp> {
     initPlatformState();
 
     _locationSubscription =
-        _location.onLocationChanged().listen((LocationData result) {
+        _flutterOtherPlugin.onLocationChanged().listen((LocationData result) {
       setState(() {
         _currentLocation = result;
       });
@@ -51,8 +52,8 @@ class _MyAppState extends State<MyApp> {
     // Platform messages may fail, so we use a try/catch PlatformException.
 
     try {
-      _permission = await _location.hasPermission();
-      location = await _location.getLocation();
+      _permission = await _flutterOtherPlugin.hasPermission();
+      location = await _flutterOtherPlugin.getLocation();
 
       error = null;
     } on PlatformException catch (e) {
@@ -81,8 +82,8 @@ class _MyAppState extends State<MyApp> {
         _globalKey.currentContext.findRenderObject();
     ui.Image image = await boundary.toImage();
     ByteData byteData = await image.toByteData(format: ui.ImageByteFormat.png);
-    final result = await FlutterOtherPlugin.save(byteData.buffer.asUint8List());
-    print(result);
+    _save = await FlutterOtherPlugin.save(byteData.buffer.asUint8List());
+    print(_save);
   }
 
   @override

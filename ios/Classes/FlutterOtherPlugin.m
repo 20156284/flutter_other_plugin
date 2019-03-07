@@ -112,11 +112,11 @@
 -(void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
     NSString *msg = nil ;
     if(error){
-        msg = @"保存图片失败" ;.
-        self.flutterResult(@(0));
+        msg = @"保存图片失败" ;
+        self.flutterResult([NSNumber numberWithBool:NO]);
     }else{
         msg = @"保存图片成功" ;
-        self.flutterResult(@(1));
+        self.flutterResult([NSNumber numberWithBool:YES]);
     }
     NSLog(@"%@",msg);
 }

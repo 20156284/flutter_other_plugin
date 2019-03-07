@@ -55,12 +55,15 @@ class FlutterOtherPlugin {
       _channel.invokeMethod('hasPermission').then((result) => result == 1);
 
   //保存图片
-  static Future save(Uint8List imageBytes) async {
+  static Future<bool> save(Uint8List imageBytes) async {
     assert(imageBytes != null);
-    final result =
-        await _channel.invokeMethod('saveImageToGallery', imageBytes);
-    return result;
+    bool _save = await _channel.invokeMethod('saveImageToGallery', imageBytes);
+    return _save;
   }
+//
+//  //保存图片
+//  Future<bool> save(Uint8List imageBytes) =>
+//      _channel.invokeMethod('saveImageToGallery').then((result) => result == 1);
 
   /// Returns a stream of location information.
   Stream<LocationData> onLocationChanged() {

@@ -152,8 +152,8 @@ public class FlutterOtherPlugin implements MethodCallHandler, StreamHandler {
     }
   }
 
-  private int savePhotoToSDCard(Bitmap photoBitmap) {
-    int result = 0;
+  private boolean savePhotoToSDCard(Bitmap photoBitmap) {
+    boolean result = false;
     //系统相册目录
     String photoName = "paopao"+System.currentTimeMillis()+".png";
 
@@ -169,7 +169,7 @@ public class FlutterOtherPlugin implements MethodCallHandler, StreamHandler {
         if (photoBitmap.compress(Bitmap.CompressFormat.PNG, 100,
                 fileOutputStream)) {
           fileOutputStream.flush();
-          result = 1;
+          result = true;
         }
       }
     } catch (FileNotFoundException e) {
