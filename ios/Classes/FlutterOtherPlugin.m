@@ -68,6 +68,7 @@
         if (flutterData.data.bytes > 0) {
             UIImage *image = [UIImage imageWithData:flutterData.data];
             UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+            self.flutterResult =result;
         }
     }
     else if ([call.method isEqualToString:@"getLocation"]) {
@@ -111,9 +112,11 @@
 -(void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
     NSString *msg = nil ;
     if(error){
-        msg = @"保存图片失败" ;
+        msg = @"保存图片失败" ;.
+        self.flutterResult(@(0));
     }else{
         msg = @"保存图片成功" ;
+        self.flutterResult(@(1));
     }
     NSLog(@"%@",msg);
 }
