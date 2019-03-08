@@ -1,19 +1,8 @@
 package com.willcheung.flutterotherplugin;
 
-import io.flutter.plugin.common.EventChannel;
-import io.flutter.plugin.common.EventChannel.EventSink;
-import io.flutter.plugin.common.EventChannel.StreamHandler;
-import io.flutter.plugin.common.MethodChannel;
-import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
-import io.flutter.plugin.common.MethodChannel.Result;
-import io.flutter.plugin.common.MethodCall;
-import io.flutter.plugin.common.PluginRegistry;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
-
 import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -27,25 +16,24 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.Settings;
-import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 
-import android.content.IntentSender;
-import android.os.Looper;
-//import androidx.annotation.MainThread;
-//import androidx.annotation.NonNull;
-//import androidx.annotation.Nullable;
-//import androidx.core.app.ActivityCompat;
-//import androidx.core.content.ContextCompat;
-
-
-import java.util.HashMap;
+import io.flutter.plugin.common.EventChannel;
+import io.flutter.plugin.common.EventChannel.EventSink;
+import io.flutter.plugin.common.EventChannel.StreamHandler;
+import io.flutter.plugin.common.MethodCall;
+import io.flutter.plugin.common.MethodChannel;
+import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
+import io.flutter.plugin.common.MethodChannel.Result;
+import io.flutter.plugin.common.PluginRegistry;
+import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 import static android.content.Context.LOCATION_SERVICE;
 
@@ -75,7 +63,7 @@ public class FlutterOtherPlugin implements MethodCallHandler, StreamHandler {
   }
 
 
-  private void reqPermission() {
+  private void reqWritePermission() {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
       String[] PERMISSIONS_STORAGE = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
       if (activity.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
@@ -211,7 +199,7 @@ public class FlutterOtherPlugin implements MethodCallHandler, StreamHandler {
       //如果是Network
       locationProvider = LocationManager.NETWORK_PROVIDER;
     } else {
-      showDialogTipUserRequestPermission(true);
+      reqWritePermission();
       return;
     }
     //获取Location
@@ -341,22 +329,25 @@ public class FlutterOtherPlugin implements MethodCallHandler, StreamHandler {
   }
 
   private boolean shouldShowRequestPermissionRationale() {
-    return ActivityCompat.shouldShowRequestPermissionRationale(activity, Manifest.permission.ACCESS_FINE_LOCATION);
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+      return activity.shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_FINE_LOCATION);
+    }
+    return true;
   }
 
-  /**
-   * Return the current state of the permissions needed.
-   */
   private boolean checkPermissions() {
-    int permissionState = ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_FINE_LOCATION);
-    return permissionState == PackageManager.PERMISSION_GRANTED;
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+      int permissionState = activity.checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION);
+      return permissionState == PackageManager.PERMISSION_GRANTED;
+    }
+    return true;
   }
 
   private void requestPermissions() {
-    ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-            REQUEST_PERMISSIONS_REQUEST_CODE);
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+      activity.requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION},REQUEST_PERMISSIONS_REQUEST_CODE);
+    }
   }
-
 
   /** Plugin registration. */
   public static void registerWith(Registrar registrar) {
@@ -383,7 +374,7 @@ public class FlutterOtherPlugin implements MethodCallHandler, StreamHandler {
         Bitmap image = BytesBimap((byte[]) call.arguments);
         result.success(savePhotoToSDCard(image));
       }else{
-        showDialogTipUserRequestPermission(false);
+        reqWritePermission();
       }
     }
     else if (call.method.equals("getLocation")) {
