@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3bb65fa-988b-4429-bb26-bc0e52a5fbdf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/willcheung/flutterotherplugin/FlutterOtherPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/willcheung/flutterotherplugin/FlutterOtherPlugin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
@@ -27,13 +27,13 @@
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.15" value="1" />
-          <entry key="project.open.time.2" value="7" />
+          <entry key="project.open.time.2" value="8" />
           <entry key="project.open.time.3" value="3" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="30" />
+          <entry key="project.opened" value="31" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -43,7 +43,7 @@
           <entry key="m" value="9" />
           <entry key="md" value="68" />
           <entry key="txt" value="69" />
-          <entry key="yaml" value="73" />
+          <entry key="yaml" value="74" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -53,7 +53,7 @@
           <entry key="Markdown" value="68" />
           <entry key="ObjectiveC" value="9" />
           <entry key="PLAIN_TEXT" value="69" />
-          <entry key="YAML" value="73" />
+          <entry key="YAML" value="74" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -66,8 +66,8 @@
           <entry key="java" value="10" />
           <entry key="m" value="2" />
           <entry key="md" value="2" />
-          <entry key="xml" value="3" />
-          <entry key="yaml" value="14" />
+          <entry key="xml" value="4" />
+          <entry key="yaml" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -79,8 +79,8 @@
           <entry key="Markdown" value="2" />
           <entry key="ObjectiveC" value="5" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="XML" value="3" />
-          <entry key="YAML" value="14" />
+          <entry key="XML" value="4" />
+          <entry key="YAML" value="15" />
         </counts>
       </usages-collector>
     </session>
@@ -90,8 +90,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/android/src/main/java/com/willcheung/flutterotherplugin/FlutterOtherPlugin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="322" column="22" selection-start-line="322" selection-start-column="22" selection-end-line="322" selection-end-column="22" />
+            <state relative-caret-position="438">
+              <caret line="432" column="1" selection-start-line="432" selection-start-column="1" selection-end-line="432" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -124,9 +124,9 @@
         <option value="$PROJECT_DIR$/example/test/widget_test.dart" />
         <option value="$PROJECT_DIR$/example/lib/main.dart" />
         <option value="$PROJECT_DIR$/lib/flutter_other_plugin.dart" />
-        <option value="$PROJECT_DIR$/android/src/main/java/com/willcheung/flutterotherplugin/FlutterOtherPlugin.java" />
         <option value="$PROJECT_DIR$/example/pubspec.yaml" />
         <option value="$PROJECT_DIR$/pubspec.yaml" />
+        <option value="$PROJECT_DIR$/android/src/main/java/com/willcheung/flutterotherplugin/FlutterOtherPlugin.java" />
       </list>
     </option>
   </component>
@@ -142,8 +142,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -201,6 +199,8 @@
         </subPane>
         <option name="show-excluded-files" value="false" />
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -296,8 +296,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="90" y="23" width="1501" height="944" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4950495" visible="true" weight="0.30020562" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4950495" visible="true" weight="0.30431804" />
       <window_info id="Captures" order="1" side_tool="true" />
       <window_info id="Structure" order="2" sideWeight="0.5049505" side_tool="true" weight="0.2987761" />
       <window_info id="Image Layers" order="3" />
@@ -311,11 +312,11 @@
       <window_info anchor="bottom" id="Android Profiler" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Logcat" order="4" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.4964789" />
-      <window_info anchor="bottom" id="Terminal" order="6" sideWeight="0.49964002" visible="true" weight="0.3286385" />
+      <window_info anchor="bottom" id="Terminal" order="6" sideWeight="0.49964002" weight="0.3286385" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50035995" side_tool="true" weight="0.3286385" />
       <window_info anchor="bottom" id="Flutter Performance" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3286385" />
+      <window_info anchor="bottom" id="Messages" order="10" visible="true" weight="0.3286385" />
       <window_info anchor="bottom" id="Find" order="11" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
@@ -384,9 +385,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$USER_HOME$/flutter/packages/flutter/lib/src/services/platform_channel.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="117">
@@ -449,10 +447,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/android/src/main/java/com/willcheung/flutterotherplugin/FlutterOtherPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="322" column="22" selection-start-line="322" selection-start-column="22" selection-end-line="322" selection-end-column="22" />
+        <state relative-caret-position="438">
+          <caret line="432" column="1" selection-start-line="432" selection-start-column="1" selection-end-line="432" selection-end-column="1" />
         </state>
       </provider>
     </entry>

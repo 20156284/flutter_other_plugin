@@ -142,14 +142,21 @@ public class FlutterOtherPlugin implements MethodCallHandler, StreamHandler {
 
   private boolean savePhotoToSDCard(Bitmap photoBitmap) {
     boolean result = false;
+    //PackageManager pm = activity.getPackageManager();
+    //String appName = activity.getApplicationInfo().loadLabel(pm).toString();
     //系统相册目录
-    String photoName = "paopao"+System.currentTimeMillis()+".png";
-
+    String photoName = System.currentTimeMillis()+".png";
+//    String dir = Environment.getExternalStorageDirectory()+"/"+appName+"/";
+//
+//    File file = new File(dir);
+//    if(!file.exists()){
+//      file.mkdir();
+//    }
     String path = Environment.getExternalStorageDirectory()
             + File.separator + Environment.DIRECTORY_DCIM
             +File.separator+"Camera"+File.separator;
 
-    File photoFile = new File(path, photoName);
+    File photoFile = new File(path,photoName);
     FileOutputStream fileOutputStream = null;
     try {
       fileOutputStream = new FileOutputStream(photoFile);
@@ -158,6 +165,7 @@ public class FlutterOtherPlugin implements MethodCallHandler, StreamHandler {
                 fileOutputStream)) {
           fileOutputStream.flush();
           result = true;
+          saveSuccessNotice(photoFile);
         }
       }
     } catch (FileNotFoundException e) {
@@ -179,6 +187,17 @@ public class FlutterOtherPlugin implements MethodCallHandler, StreamHandler {
     return result;
   }
 
+
+  private void saveSuccessNotice(File file){
+    try{
+      Intent intent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+      Uri uri = Uri.fromFile(file);
+      intent.setData(uri);
+      activity.sendBroadcast(intent);
+    }catch(Exception e){
+
+    }
+  }
 
   /**
    * 获取经纬度
