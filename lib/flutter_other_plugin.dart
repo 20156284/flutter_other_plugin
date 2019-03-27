@@ -60,12 +60,13 @@ class FlutterOtherPlugin {
     bool _save = await _channel.invokeMethod('saveImageToGallery', imageBytes);
     return _save;
   }
-//
-//  //保存图片
-//  Future<bool> save(Uint8List imageBytes) =>
-//      _channel.invokeMethod('saveImageToGallery').then((result) => result == 1);
 
-  /// Returns a stream of location information.
+  //播放铃声 如果静的情况调用震动
+  static Future<bool> playBell(String bellUrl) async {
+    assert(bellUrl != null);
+    return _channel.invokeMethod('playBell', bellUrl);
+  }
+
   Stream<LocationData> onLocationChanged() {
     if (_onLocationChanged == null) {
       _onLocationChanged = _stream.receiveBroadcastStream().map<LocationData>(

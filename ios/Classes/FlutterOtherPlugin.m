@@ -1,12 +1,16 @@
 #import "FlutterOtherPlugin.h"
+#import "RBDMuteSwitch.h"
+#import <AVFoundation/AVFoundation.h>
 
 #ifdef COCOAPODS
 @import CoreLocation;
 #else
-#import <CoreLocation/CoreLocation.h>
+#import <CoreLocation/CoreLocation.h
 #endif      
 
-@interface FlutterOtherPlugin() <FlutterStreamHandler, CLLocationManagerDelegate>
+@interface FlutterOtherPlugin() <FlutterStreamHandler, CLLocationManagerDelegate,RBDMuteSwitchDelegate>{
+    AVAudioPlayer *_audioPlayer;
+}
 @property (strong, nonatomic) CLLocationManager *clLocationManager;
 @property (copy, nonatomic)   FlutterResult      flutterResult;
 @property (assign, nonatomic) BOOL               locationWanted;
@@ -14,6 +18,7 @@
 @property (copy, nonatomic)   FlutterEventSink   flutterEventSink;
 @property (assign, nonatomic) BOOL               flutterListening;
 @property (assign, nonatomic) BOOL               hasInit;
+@property (strong, nonatomic) NSString           *filePath;
 @end
 
 @implementation FlutterOtherPlugin
@@ -35,9 +40,34 @@
         self.locationWanted = NO;
         self.flutterListening = NO;
         self.hasInit = NO;
-        
     }
     return self;
+}
+
+- (void)beginDetection {
+    [[RBDMuteSwitch sharedInstance] setDelegate:self];
+    [[RBDMuteSwitch sharedInstance] detectMuteSwitch];
+}
+
+#pragma mark RBDMuteSwitchDelegate methods
+//这里处理回调即可
+- (void)isMuted:(BOOL)muted {
+    if (!muted) {
+        NSLog(@"有铃声~");
+        //初始化播放器对象
+        _audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:[NSURL URLWithString:self.filePath] error:nil];
+        //设置声音的大小
+        _audioPlayer.volume = 0.8;//范围为（0到1）；
+        //设置循环次数，如果为负数，就是无限循环
+        _audioPlayer.numberOfLoops =0;
+        //设置播放进度
+        _audioPlayer.currentTime = 0;
+        //准备播放
+        [_audioPlayer prepareToPlay];
+        [_audioPlayer play];
+    }
+//    NSLog(@"静音哦~");
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);  //震动效果;
 }
 
 -(void)initLocation {
@@ -104,7 +134,14 @@
             result(@(0));
         }
         //
-    } else {
+    }
+    else if ([call.method isEqualToString:@"playBell"]) {
+        self.filePath =call.arguments;
+        [self beginDetection];
+//        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+//        return;
+        self.flutterResult =result;
+    }else {
         result(FlutterMethodNotImplemented);
     }
 }

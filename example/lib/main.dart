@@ -1,10 +1,12 @@
 import 'dart:async';
 import 'dart:ui' as ui;
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_other_plugin/flutter_other_plugin.dart';
+import 'package:path_provider/path_provider.dart';
 
 void main() {
   runApp(new MyApp());
@@ -18,6 +20,8 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   LocationData _startLocation;
   LocationData _currentLocation;
+  Map<String, File> loadedFiles = {};
+  String localFilePath;
 
   StreamSubscription<LocationData> _locationSubscription;
 
@@ -36,6 +40,8 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
 
+    _loadFile();
+
     initPlatformState();
 
     _locationSubscription =
@@ -43,6 +49,32 @@ class _MyAppState extends State<MyApp> {
       setState(() {
         _currentLocation = result;
       });
+    });
+  }
+
+  Future<ByteData> _fetchAsset(String fileName) async {
+    return await rootBundle.load('assets/$fileName');
+  }
+
+  Future<File> fetchToMemory(String fileName) async {
+    final file = new File(
+        '${(await getApplicationDocumentsDirectory()).path}/$fileName');
+    await file.create(recursive: true);
+    return await file
+        .writeAsBytes((await _fetchAsset(fileName)).buffer.asUint8List());
+  }
+
+  Future<File> load(String fileName) async {
+    if (!loadedFiles.containsKey(fileName)) {
+      loadedFiles[fileName] = await fetchToMemory(fileName);
+    }
+    return loadedFiles[fileName];
+  }
+
+  Future _loadFile() async {
+    File file = await fetchToMemory("msgSound.mp3");
+    setState(() {
+      localFilePath = file.path.toString();
     });
   }
 
@@ -86,6 +118,10 @@ class _MyAppState extends State<MyApp> {
     print(_save);
   }
 
+  _playBell() async {
+    FlutterOtherPlugin.playBell(localFilePath);
+  }
+
   @override
   Widget build(BuildContext context) {
     List<Widget> widgets = new List();
@@ -118,6 +154,15 @@ class _MyAppState extends State<MyApp> {
       child: RaisedButton(
         onPressed: _saved,
         child: Text("保存到相册"),
+      ),
+      width: 100,
+      height: 50,
+    ));
+
+    widgets.add(new Container(
+      child: RaisedButton(
+        onPressed: _playBell,
+        child: Text("播放铃声"),
       ),
       width: 100,
       height: 50,
