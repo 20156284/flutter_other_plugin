@@ -15,9 +15,9 @@ Android 调用铃声 请在 AndroidManifest.xml 添加
 <uses-permission android:name="android.permission.VIBRATE" />
 获取震动的权限
 
-IOS call ring
+#IOS call ring
 Please copy the detection. Aiff file under example to your ios project
-Android calling ring
+#Android calling ring
 Please add the in the androidmanifest.xml
 < USES - the permission of the android: name = "android. Permission. VIBRATE" / >
 Get permission to vibrate
