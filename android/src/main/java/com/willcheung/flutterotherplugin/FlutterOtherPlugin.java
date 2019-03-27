@@ -11,10 +11,13 @@ import android.graphics.BitmapFactory;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Vibrator;
 import android.provider.Settings;
 import android.util.Log;
 
@@ -40,6 +43,7 @@ import static android.content.Context.LOCATION_SERVICE;
 
 /** FlutterOtherPlugin */
 public class FlutterOtherPlugin implements MethodCallHandler, StreamHandler {
+  private Vibrator mVibrator;  //声明一个振动器对象
   private static final String STREAM_CHANNEL_NAME = "flutter_other_plugin/locationstream";
   private static final String METHOD_CHANNEL_NAME = "flutter_other_plugin";
 
@@ -396,6 +400,33 @@ public class FlutterOtherPlugin implements MethodCallHandler, StreamHandler {
         reqWritePermission();
       }
     }
+    else if (call.method.equals("playBell")) {
+      String bellUrl = call.arguments.toString();
+      Uri uri = Uri.parse(bellUrl);
+      AudioManager audioManager = (AudioManager)activity.getSystemService(activity.AUDIO_SERVICE);
+      int mode = audioManager.getRingerMode();
+      switch (mode){
+        case AudioManager.RINGER_MODE_NORMAL:
+          //普通模式
+          Log.i("","普通模式");
+
+          MediaPlayer mPlayer = MediaPlayer.create(activity,uri);
+          mPlayer.start();
+
+          onVibrator();
+          break;
+        case AudioManager.RINGER_MODE_VIBRATE:
+          //振动模式
+          Log.i("","振动模式");
+          onVibrator();
+          break;
+        case AudioManager.RINGER_MODE_SILENT:
+          //静音模式
+          Log.i("","静音模式");
+          break;
+      }
+
+    }
     else if (call.method.equals("getLocation")) {
       if (!checkPermissions()) {
         this.result = result;
@@ -414,6 +445,12 @@ public class FlutterOtherPlugin implements MethodCallHandler, StreamHandler {
     }
   }
 
+
+  private void onVibrator(){
+    mVibrator = (Vibrator)activity.getSystemService(activity.VIBRATOR_SERVICE);
+    long [] pattern = {100, 100, 100, 100};   // 停止 开启 停止 开启
+    mVibrator.vibrate(pattern,-1);
+  }
 
   @Override
   public void onListen(Object o, EventSink eventsSink) {
