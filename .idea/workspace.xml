@@ -42,7 +42,7 @@
           <entry key="java" value="2" />
           <entry key="m" value="9" />
           <entry key="md" value="170" />
-          <entry key="txt" value="69" />
+          <entry key="txt" value="81" />
           <entry key="yaml" value="74" />
         </counts>
       </usages-collector>
@@ -52,7 +52,7 @@
           <entry key="JAVA" value="2" />
           <entry key="Markdown" value="68" />
           <entry key="ObjectiveC" value="9" />
-          <entry key="PLAIN_TEXT" value="171" />
+          <entry key="PLAIN_TEXT" value="183" />
           <entry key="YAML" value="74" />
         </counts>
       </usages-collector>
@@ -99,8 +99,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="285">
+              <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -446,7 +446,21 @@
       <option name="project" value="LOCAL" />
       <updated>1551961341422</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="修改 readme 文件">
+      <created>1553687594477</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1553687594477</updated>
+    </task>
+    <task id="LOCAL-00007" summary="修改 readme 文件">
+      <created>1553687660042</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1553687660042</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -458,7 +472,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="450" y="23" width="1501" height="944" extended-state="0" />
+    <frame x="243" y="23" width="1501" height="944" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4950495" visible="true" weight="0.31254283" />
@@ -499,7 +513,8 @@
     <MESSAGE value="修改 这个是有BUG的 修提交" />
     <MESSAGE value="修改 让 保存照片有回调" />
     <MESSAGE value="修改 保存照片 用 布尔类型返回" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改 保存照片 用 布尔类型返回" />
+    <MESSAGE value="修改 readme 文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改 readme 文件" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/example/android/app/build.gradle">
@@ -615,8 +630,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="285">
+          <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
         </state>
       </provider>
     </entry>
